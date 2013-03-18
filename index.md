@@ -7,9 +7,9 @@ tagline: Supporting tagline
 
 读 [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+完整的使用教程和文档请点击这里: [Jekyll Bootstrap](http://jekyllbootstrap.com)
 
-## Update Author Attributes
+## 修改作者信息
 
 In `_config.yml` remember to specify your own data:
     
