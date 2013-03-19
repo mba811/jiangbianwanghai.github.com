@@ -1,10 +1,10 @@
-/* Custom container */
-.container-narrow {
-  margin: 0 auto;
-  max-width: 700px; }
+body{font-family:"微软雅黑"; background:url('bg.jpg');}
 
-.container-narrow > hr {
-  margin: 30px 0; }
+/* Custom container */
+.container-narrow{margin:0 auto;max-width:960px;}
+.container-narrow > hr{margin: 30px 0;}
+.container-narrow .content{border:solid 1px #EEE;background:#FFF;padding:20px 40px 20px 40px;border-radius:4px;box-shadow:1px 1px 3px #ddd, -1px -1px 3px #ddd;
+}
 
 .navbar .nav {
   float: right; }

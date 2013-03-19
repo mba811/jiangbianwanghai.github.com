@@ -1,17 +1,17 @@
 ---
 layout: post
+title: "jekyll介绍"
 category : lessons
-tagline: "Supporting tagline"
+tagline: "详细介绍Jekyll如何使用"
 tags : [intro, beginner, jekyll, tutorial]
 ---
 {% include JB/setup %}
 
-This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
-Directly following the intro we'll learn exactly _how_ Jekyll does what it does.
+这篇文章将详细介绍：Jekyll是什么，能做什么和我们如何使用它。
 
-## Overview 
+## 概述 
 
-### What is Jekyll?
+### Jekyll是什么？
 
 Jekyll is a parsing engine bundled as a ruby gem used to build static websites from
 dynamic components such as templates, partials, liquid code, markdown, etc. Jekyll is known as "a simple, blog aware, static site generator".

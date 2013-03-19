@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: 欢迎光临江边望海的博客!
+tagline: php,yii,css3,html5,redis
 ---
 {% include JB/setup %}
 
@@ -9,9 +9,9 @@ tagline: Supporting tagline
 
 完整的使用教程和文档请点击这里: [Jekyll Bootstrap](http://jekyllbootstrap.com)
 
-## 修改作者信息
+##### 修改作者信息
 
-In `_config.yml` remember to specify your own data:
+可以在 `_config.yml` 中配置您个人的信息：
     
     title : My Blog =)
     
@@ -21,9 +21,9 @@ In `_config.yml` remember to specify your own data:
       github : username
       twitter : username
 
-The theme should reference these variables whenever needed.
+这些变量将会在模版中被调用。
     
-## Sample Posts
+##### Sample Posts
 
 This blog contains sample posts which help stage pages and blog data.
 When you don't need the samples anymore just delete the `_posts/core-samples` folder.
@@ -38,7 +38,7 @@ Here's a sample "posts list".
   {% endfor %}
 </ul>
 
-## To-Do
+##### To-Do
 
 This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
 We need to clean up the themes, make theme usage guides with theme-specific markup examples.
