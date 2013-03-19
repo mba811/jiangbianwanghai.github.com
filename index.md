@@ -1,46 +1,12 @@
 ---
 layout: page
-title: 欢迎光临江边望海的博客!
-tagline: php,yii,css3,html5,redis
+title: 江边望海的博客!
+tagline: 关注我：weibo.com/jiangbianwanghai
 ---
 {% include JB/setup %}
-
-读 [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
-
-完整的使用教程和文档请点击这里: [Jekyll Bootstrap](http://jekyllbootstrap.com)
-
-##### 修改作者信息
-
-可以在 `_config.yml` 中配置您个人的信息：
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
-
-这些变量将会在模版中被调用。
-    
-##### Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
 
 <ul class="posts">
   {% for post in site.posts %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
-
-##### To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
-
