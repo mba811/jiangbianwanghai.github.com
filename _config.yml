@@ -100,7 +100,6 @@ JB :
   #        
   analytics :
     provider : baidu 
-    baidu :
     google : 
         tracking_id : 'UA-123-12'
     getclicky :
