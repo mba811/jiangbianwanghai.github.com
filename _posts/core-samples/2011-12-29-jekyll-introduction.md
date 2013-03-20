@@ -9,22 +9,15 @@ tags : [intro, beginner, jekyll, tutorial]
 
 这篇文章将详细介绍：Jekyll是什么，能做什么和我们如何使用它。
 
-## 概述 
+#### 概述 
 
-### Jekyll是什么？
+##### Jekyll是什么？
 
-Jekyll is a parsing engine bundled as a ruby gem used to build static websites from
-dynamic components such as templates, partials, liquid code, markdown, etc. Jekyll is known as "a simple, blog aware, static site generator".
+Jekyll 是一个解析引擎作为ruby的插件用来从动态组件，如：模版,partials, liquid code, markdown等创建静态站点。Jekyll 是非常不错的一个简单高效的静态博客生成器。我的博客就是用Jekyll创建的。 
 
-### Examples
+##### What does Jekyll Do?
 
-This website is created with Jekyll. [Other Jekyll websites](https://github.com/mojombo/jekyll/wiki/Sites).
-
-
-
-### What does Jekyll Do?
-
-Jekyll is a ruby gem you install on your local system.
+Jekyll是ruby的一个插件你可以安装在本地环境
 Once there you can call `jekyll --server` on a directory and provided that directory
 is setup in a way jekyll expects, it will do magic stuff like parse markdown/textile files, 
 compute categories, tags, permalinks, and construct your pages from layout templates and partials.
@@ -35,7 +28,7 @@ The intention here is that you can serve all contents in this folder statically 
 You can think of Jekyll as a normalish dynamic blog but rather than parsing content, templates, and tags
 on each request, Jekyll does this once _beforehand_ and caches the _entire website_ in a folder for serving statically.
 
-### Jekyll is Not Blogging Software
+##### Jekyll is Not Blogging Software
 
 **Jekyll is a parsing engine.**
 
