@@ -1,164 +1,218 @@
 ---
 layout: post
-title: "jekyll介绍"
+title: "[译文]Jekyll Introduction(Jekyll入门教程)"
 category : lessons
-tagline: "详细介绍Jekyll如何使用"
+tagline: "转载本站文章请注明作者和出处"
 tags : [intro, beginner, jekyll, tutorial]
 ---
 {% include JB/setup %}
 
-这篇文章将详细介绍：Jekyll是什么，能做什么和我们如何使用它。
+This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
+Directly following the intro we'll learn exactly _how_ Jekyll does what it does.
 
-#### 概述 
+【翻译】这个Jekyll入门教程将大致包括：Jekyll是什么？为什么我们要使用它？之后我们将学习使用Jekyll搭建一个博客。
 
-##### Jekyll是什么？
 
-Jekyll 是一个解析引擎作为ruby的插件用来从动态组件，如：模版,partials, liquid code, markdown等创建静态站点。Jekyll 是非常不错的一个简单高效的静态博客生成器。我的博客就是用Jekyll创建的。 
+## Overview （概述）
 
-##### What does Jekyll Do?
+### What is Jekyll?（Jekyll是什么？）
 
-Jekyll是ruby的一个插件你可以安装在本地环境
+Jekyll is a parsing engine bundled as a ruby gem used to build static websites from
+dynamic components such as templates, partials, liquid code, markdown, etc. Jekyll is known as "a simple, blog aware, static site generator".
+
+【翻译】Jekyll作为ruby的一个解析引擎插件，可以用它通过动态组件，比如：模版，partials，liquid code，markdown等创建静态站点。Jekyll被认为是一个简单的博客、静态站点生成工具。
+
+### Examples（实例）
+
+This website is created with Jekyll. [Other Jekyll websites](https://github.com/mojombo/jekyll/wiki/Sites).
+
+【翻译】这个站点就是用Jekyll创建的。其他的站Jekyll站点，请[点击这里](https://github.com/mojombo/jekyll/wiki/Sites)
+
+
+### What does Jekyll Do?（Jekyll能做什么？）
+
+Jekyll is a ruby gem you install on your local system.
 Once there you can call `jekyll --server` on a directory and provided that directory
 is setup in a way jekyll expects, it will do magic stuff like parse markdown/textile files, 
 compute categories, tags, permalinks, and construct your pages from layout templates and partials.
 
+【翻译】你可以将Jekyll安装在自己的电脑上。在你站点的根目录运行`jekyll --server`后，它就可以解析markdown/textile文件了（经验分享：我是在D盘根目录创建了一个jiangbianwnaghai.github.com目录，因为我没有将ruby设置成环境变量，我每次启动的时候都是通过这个命令 `D:\Ruby200-x64\bin\ruby.exe D:\Ruby200-x64\bin\jekyll --server` 我在D盘安装的是64位的ruby）
+
 Once parsed, Jekyll stores the result in a self-contained static `_site` folder.
 The intention here is that you can serve all contents in this folder statically from a plain static web-server.
+
+【翻译】解析后，Jekyll会将结果存储在 `_site` 目录中。静态服务器可以打开这个目录中的所有内容
 
 You can think of Jekyll as a normalish dynamic blog but rather than parsing content, templates, and tags
 on each request, Jekyll does this once _beforehand_ and caches the _entire website_ in a folder for serving statically.
 
-##### Jekyll is Not Blogging Software
+【翻译】你可以将Jekyll认为成一个普通的动态博客但是不需要解析内容、模版、标签。对于每次请求，Jekyll都会从缓存目录 `_site` 中返回数据。
 
-**Jekyll is a parsing engine.**
+### Jekyll is Not Blogging Software（Jekyll不是博客软件）
+
+**Jekyll is a parsing engine.**（Jekyll是一个解析引擎）
 
 Jekyll does not come with any content nor does it have any templates or design elements.
 This is a common source of confusion when getting started.
 Jekyll does not come with anything you actually use or see on your website - you have to make it.
 
-### Why Should I Care?
+【翻译】Jekyll不包含任何内容、模版和设计元素。刚入门的人总是容易理解错。Jekyll不包含你博客上看到的所有内容。请一定要记住这一点它是一个**解析引擎不是博客软件**。
+
+### Why Should I Care?（为什么我很在意这一点）
 
 Jekyll is very minimalistic and very efficient.
 The most important thing to realize about Jekyll is that it creates a static representation of your website requiring only a static web-server.
 Traditional dynamic blogs like Wordpress require a database and server-side code.
 Heavily trafficked dynamic blogs must employ a caching layer that ultimately performs the same job Jekyll sets out to do; serve static content.
 
+【翻译】Jekyll非常的简约和高效。你一定要明白，Jekyll可以通过动态的内容创建一个静态的网站，而我们仅仅需要一个静态的服务器来运行它。想wordpres这种传统的博客程序，需要执行数据库和解析动态程序，为了提供高并发必须添加缓存层，最终的目的是将静态内容返回给用户，而这跟Jekyll原理没有什么差别。
+
 Therefore if you like to keep things simple and you prefer the command-line over an admin panel UI then give Jekyll a try.
+
+【翻译】因此，如果你是一个简约主义者又希望在命令行下管理你的博客不如试一试Jekyll。
 
 **Developers like Jekyll because we can write content like we write code:**
 
-- Ability to write content in markdown or textile in your favorite text-editor.
-- Ability to write and preview your content via localhost.
-- No internet connection required.
-- Ability to publish via git.
-- Ability to host your blog on a static web-server.
-- Ability to host freely on GitHub Pages.
-- No database required.
+【翻译】开发者喜欢Jekyll是因为我们可以像写代码一样写文章。
 
-# How Jekyll Works
+- Ability to write content in markdown or textile in your favorite text-editor.（你可以使用你喜欢的编辑器来写markdown或者textile）
+- Ability to write and preview your content via localhost.（你可以在本地环境预览你的内容）
+- No internet connection required.（不需要有网络连接）
+- Ability to publish via git.（可以发布到git上）
+- Ability to host your blog on a static web-server.（只需要一个静态服务器就能运行你的博客）
+- Ability to host freely on GitHub Pages.（可以使用GitHub搭建一个免费的博客）
+- No database required.（不需要数据库）
+
+# How Jekyll Works（Jekyll是怎么工作的？）
 
 The following is a complete but concise outline of exactly how Jekyll works.
+
+【翻译】下面将详细的介绍Jekyll是怎么工作的
 
 Be aware that core concepts are introduced in rapid succession without code examples.
 This information is not intended to specifically teach you how to do anything, rather it
 is intended to give you the _full picture_ relative to what is going on in Jekyll-world.
 
+【翻译】注意，介绍核心概念时没有代码示例。这些内容不是教你做任何事情的，而是给你勾勒出一张Jekyll能做什么的图而已。
+
 Learning these core concepts should help you avoid common frustrations and ultimately 
 help you better understand the code examples contained throughout Jekyll-Bootstrap.
 
+【翻译】学习这些核心概念将会帮你避免一些错误，更好的理解Jekyll-Bootstrap中的示例代码。
 
-## Initial Setup
+## Initial Setup（初始化安装）
 
-After [installing jekyll](/index.html#start-now) you'll need to format your website directory in a way jekyll expects.
+After [installing jekyll](http://jekyllbootstrap.com/index.html#start-now) you'll need to format your website directory in a way jekyll expects.
 Jekyll-bootstrap conveniently provides the base directory format.
 
-### The Jekyll Application Base Format
+【翻译】Jekyll[安装](http://jekyllbootstrap.com/index.html#start-now)完成后，你必须将站点根目录格式化成Jekyll需要的格式。Jekyll-Bootstrap已经提供了完整的格式化目录。
 
-Jekyll expects your website directory to be laid out like so:
+
+### The Jekyll Application Base Format（Jekyll的基本结构）
+
+Jekyll expects your website directory to be laid out like so:（希望您的目录结构跟Jekyll的一样）
 
     .
-    |-- _config.yml
+    |-- _config.yml（配置文件）
     |-- _includes
-    |-- _layouts
-    |   |-- default.html
-    |   |-- post.html
-    |-- _posts
+    |-- _layouts（布局文件）
+    |   |-- default.html（默认模版）
+    |   |-- post.html（文章模版）
+    |-- _posts（markdwon文件）
     |   |-- 2011-10-25-open-source-is-good.markdown
     |   |-- 2011-04-26-hello-world.markdown
-    |-- _site
-    |-- index.html
-    |-- assets
+    |-- _site（生成的静态文件）
+    |-- index.html（首页）
+    |-- assets（宝翰js,css,img）
         |-- css
             |-- style.css
         |-- javascripts
 
 
 - **\_config.yml**  
-	Stores configuration data.
+  Stores configuration data.（存储配置信息）
 
 - **\_includes**  
-	This folder is for partial views.
+  This folder is for partial views.（这个文件保存着需要解析的视图文件）
 
 - **\_layouts**   
-	This folder is for the main templates your content will be inserted into.
-	You can have different layouts for different pages or page sections.
+  This folder is for the main templates your content will be inserted into.（这个文件主要包含一些模版）
+  You can have different layouts for different pages or page sections.（你可以将不同的视图文件放到不同的目录下）
 
 - **\_posts**  
-	This folder contains your dynamic content/posts.
-	the naming format is required to be `@YEAR-MONTH-DATE-title.MARKUP@`.
+  This folder contains your dynamic content/posts.（包含你的动态内容）
+  the naming format is required to be `@YEAR-MONTH-DATE-title.MARKUP@`.（名字已经被格式化成了`@YEAR-MONTH-DATE-title.MARKUP@`）
 
 - **\_site**  
-	This is where the generated site will be placed once Jekyll is done transforming it. 
+  This is where the generated site will be placed once Jekyll is done transforming it. （这是使用Jekyll生成的静态文件）
 
 - **assets**  
-	This folder is not part of the standard jekyll structure.
-	The assets folder represents _any generic_ folder you happen to create in your root directory.
-	Directories and files not properly formatted for jekyll will be left untouched for you to serve normally.
+  This folder is not part of the standard jekyll structure.（这个目录不是Jekyll结构的一部分）
+  The assets folder represents _any generic_ folder you happen to create in your root directory.（你可以在根目录下的任何一个地方创建这个目录）
+  Directories and files not properly formatted for jekyll will be left untouched for you to serve normally.（通常保存一些不需要Jekyll格式化的文件，比如：js,css,picture等）
 
 (read more: <https://github.com/mojombo/jekyll/wiki/Usage>)
 
+（扩展阅读: <https://github.com/mojombo/jekyll/wiki/Usage>）
 
-### Jekyll Configuration
+
+### Jekyll Configuration（Jekyll的配置）
 
 Jekyll supports various configuration options that are fully outlined here:
 <https://github.com/mojombo/jekyll/wiki/Configuration>
 
+【翻译】Jekyll的完整配置请看这里：<https://github.com/mojombo/jekyll/wiki/Configuration>
 
 
-
-## Content in Jekyll
+## Content in Jekyll（Jekyll的内容）
 
 Content in Jekyll is either a post or a page.
 These content "objects" get inserted into one or more templates to build the final output for its respective static-page.
 
-### Posts and Pages
+【翻译】Jekyll中的内容要么是一片文章要么是一个页面。这些内容“对象”最终被插入到多个模版中，最终生成的将是静态页面。
+
+### Posts and Pages（文章和页面）
 
 Both posts and pages should be written in markdown, textile, or HTML and may also contain Liquid templating syntax.
 Both posts and pages can have meta-data assigned on a per-page basis such as title, url path, as well as arbitrary custom meta-data.
 
-### Working With Posts
+【翻译】这些文章和页码都可以以markdown,textile,html编写在致辞Liquid语法的模版中，它们也可以设置meta-data，如：title,url路径，甚至是自定义的meta-data
 
-**Creating a Post**   
+### Working With Posts（文章的创建过程）
+
+**Creating a Post** （创建一篇文章）
 Posts are created by properly formatting a file and placing it the `_posts` folder.
 
-**Formatting**  
+【翻译】新建一个放在 `_posts` 目录下的格式化文件
+
+**Formatting** （格式化）
+
 A post must have a valid filename in the form `YEAR-MONTH-DATE-title.MARKUP` and be placed in the `_posts` directory. 
 If the data format is invalid Jekyll will not recognize the file as a post. The date and title are automatically parsed from the filename of the post file.
 Additionally, each file must have [YAML Front-Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter) prepended to its content.
 YAML Front-Matter is a valid YAML syntax specifying meta-data for the given file.
 
-**Order**  
+【翻译】在 `_posts` 目录下的文件必须有一个有效的文件名`YEAR-MONTH-DATE-title.MARKUP`如果这个文件名无效，这Jekyll无法识别出来， 日期和标题会被自动解析成文件名。此外，每个文件必须符合[YAML Front-Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter)要返回的内容。可以按照YAML语法给每个文件定义meta-data。
+
+**Order**（排序）
+
 Ordering is an important part of Jekyll but it is hard to specify a custom ordering strategy.
 Only reverse chronological and chronological ordering is supported in Jekyll.
 
 Since the date is hard-coded into the filename format, to change the order, you must change the dates in the filenames.
 
-**Tags**   
+【翻译】排序是Jekyll的重要功能，但是很难实现用户自定义规则。在Jekyll中只支持按时间顺序和倒序排列。由于文件名是被日期格式化的，改变属性只需修改文件名。
+
+**Tags** （标签）
+
 Posts can have tags associated with them as part of their meta-data.
 Tags may be placed on posts by providing them in the post's YAML front matter.
 You have access to the post-specific tags in the templates. These tags also get added to the sitewide collection.
 
-**Categories**   
+【翻译】通常将标签等信息按照YAML格式添加到文件的顶部，你也可以在模版中查看这些标签，这些标签也会集中存放在sitewide中。
+
+**Categories** （分类）
+
 Posts may be categorized by providing one or more categories in the YAML front matter.
 Categories offer more significance over tags in that they can be reflected in the URL path to the given post.
 Note categories in Jekyll work in a specific way.
@@ -306,7 +360,7 @@ Static assets should be used for images, css, and javascript files.
 Remember Jekyll is a processing engine. There are two main types of parsing in Jekyll.
 
 - **Content parsing.**   
-	This is done with textile or markdown.
+  This is done with textile or markdown.
 - **Template parsing.**   
   This is done with the liquid templating language.
 
@@ -315,8 +369,8 @@ And thus there are two main types of file formats needed for this parsing.
 - **Post and Page files.**  
   All content in Jekyll is either a post or a page so valid posts and pages are parsed with markdown or textile.
 - **Template files.**    
-	These files go in `_layouts` folder and contain your blogs **templates**. They should be made in HTML with the help of Liquid syntax.
-	Since include files are simply injected into templates they are essentially parsed as if they were native to the template.
+  These files go in `_layouts` folder and contain your blogs **templates**. They should be made in HTML with the help of Liquid syntax.
+  Since include files are simply injected into templates they are essentially parsed as if they were native to the template.
 
 **Arbitrary files and folders.**   
 Files that _are not_ valid pages are treated as static content and pass through 
@@ -370,12 +424,12 @@ The following is an outline of how that's done:
 3. **Jekyll liquifies posts and templates.**  
   Next jekyll loops through each post file and converts (through markdown or textile) and **liquifies** the post inside of its respective layout(s).
   Once the post is parsed and liquified inside the the proper layout structure, the layout itself is "liquified".   
-	**Liquification** is defined as follows: Jekyll initiates a Liquid template, and passes a simpler hash representation of the ruby site object as well as a simpler
+  **Liquification** is defined as follows: Jekyll initiates a Liquid template, and passes a simpler hash representation of the ruby site object as well as a simpler
   hash representation of the ruby post object. These simplified data structures are what you have access to in the templates.
-	
+  
 3. **Jekyll generates output.**   
-	Finally the liquid templates are "rendered", thereby processing any liquid syntax provided in the templates
-	and saving the final, static representation of the file.
+  Finally the liquid templates are "rendered", thereby processing any liquid syntax provided in the templates
+  and saving the final, static representation of the file.
  
 **Notes.**  
 Because Jekyll computes the entire site in one fell swoop, each template is given access to 
