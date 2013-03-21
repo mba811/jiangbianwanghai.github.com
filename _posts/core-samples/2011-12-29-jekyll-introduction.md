@@ -13,23 +13,23 @@ Directly following the intro we'll learn exactly _how_ Jekyll does what it does.
 【翻译】这个Jekyll入门教程将大致包括：Jekyll是什么？为什么我们要使用它？之后我们将学习使用Jekyll搭建一个博客。
 
 
-## Overview （概述）
+### Overview （概述）
 
-### What is Jekyll?（Jekyll是什么？）
+#### What is Jekyll?（Jekyll是什么？）
 
 Jekyll is a parsing engine bundled as a ruby gem used to build static websites from
 dynamic components such as templates, partials, liquid code, markdown, etc. Jekyll is known as "a simple, blog aware, static site generator".
 
 【翻译】Jekyll作为ruby的一个解析引擎插件，可以用它通过动态组件，比如：模版，partials，liquid code，markdown等创建静态站点。Jekyll被认为是一个简单的博客、静态站点生成工具。
 
-### Examples（实例）
+#### Examples（实例）
 
 This website is created with Jekyll. [Other Jekyll websites](https://github.com/mojombo/jekyll/wiki/Sites).
 
 【翻译】这个站点就是用Jekyll创建的。其他的站Jekyll站点，请[点击这里](https://github.com/mojombo/jekyll/wiki/Sites)
 
 
-### What does Jekyll Do?（Jekyll能做什么？）
+#### What does Jekyll Do?（Jekyll能做什么？）
 
 Jekyll is a ruby gem you install on your local system.
 Once there you can call `jekyll --server` on a directory and provided that directory
@@ -48,7 +48,7 @@ on each request, Jekyll does this once _beforehand_ and caches the _entire websi
 
 【翻译】你可以将Jekyll认为成一个普通的动态博客但是不需要解析内容、模版、标签。对于每次请求，Jekyll都会从缓存目录 `_site` 中返回数据。
 
-### Jekyll is Not Blogging Software（Jekyll不是博客软件）
+#### Jekyll is Not Blogging Software（Jekyll不是博客软件）
 
 **Jekyll is a parsing engine.**（Jekyll是一个解析引擎）
 
@@ -58,7 +58,7 @@ Jekyll does not come with anything you actually use or see on your website - you
 
 【翻译】Jekyll不包含任何内容、模版和设计元素。刚入门的人总是容易理解错。Jekyll不包含你博客上看到的所有内容。请一定要记住这一点它是一个**解析引擎不是博客软件**。
 
-### Why Should I Care?（为什么我很在意这一点）
+#### Why Should I Care?（为什么我很在意这一点）
 
 Jekyll is very minimalistic and very efficient.
 The most important thing to realize about Jekyll is that it creates a static representation of your website requiring only a static web-server.
@@ -83,7 +83,7 @@ Therefore if you like to keep things simple and you prefer the command-line over
 - Ability to host freely on GitHub Pages.（可以使用GitHub搭建一个免费的博客）
 - No database required.（不需要数据库）
 
-# How Jekyll Works（Jekyll是怎么工作的？）
+### How Jekyll Works（Jekyll是怎么工作的？）
 
 The following is a complete but concise outline of exactly how Jekyll works.
 
@@ -100,7 +100,7 @@ help you better understand the code examples contained throughout Jekyll-Bootstr
 
 【翻译】学习这些核心概念将会帮你避免一些错误，更好的理解Jekyll-Bootstrap中的示例代码。
 
-## Initial Setup（初始化安装）
+#### Initial Setup（初始化安装）
 
 After [installing jekyll](http://jekyllbootstrap.com/index.html#start-now) you'll need to format your website directory in a way jekyll expects.
 Jekyll-bootstrap conveniently provides the base directory format.
@@ -108,7 +108,7 @@ Jekyll-bootstrap conveniently provides the base directory format.
 【翻译】Jekyll[安装](http://jekyllbootstrap.com/index.html#start-now)完成后，你必须将站点根目录格式化成Jekyll需要的格式。Jekyll-Bootstrap已经提供了完整的格式化目录。
 
 
-### The Jekyll Application Base Format（Jekyll的基本结构）
+#### The Jekyll Application Base Format（Jekyll的基本结构）
 
 Jekyll expects your website directory to be laid out like so:（希望您的目录结构跟Jekyll的一样）
 
@@ -156,7 +156,7 @@ Jekyll expects your website directory to be laid out like so:（希望您的目�
 （扩展阅读: <https://github.com/mojombo/jekyll/wiki/Usage>）
 
 
-### Jekyll Configuration（Jekyll的配置）
+#### Jekyll Configuration（Jekyll的配置）
 
 Jekyll supports various configuration options that are fully outlined here:
 <https://github.com/mojombo/jekyll/wiki/Configuration>
@@ -164,21 +164,21 @@ Jekyll supports various configuration options that are fully outlined here:
 【翻译】Jekyll的完整配置请看这里：<https://github.com/mojombo/jekyll/wiki/Configuration>
 
 
-## Content in Jekyll（Jekyll的内容）
+### Content in Jekyll（Jekyll的内容）
 
 Content in Jekyll is either a post or a page.
 These content "objects" get inserted into one or more templates to build the final output for its respective static-page.
 
 【翻译】Jekyll中的内容要么是一片文章要么是一个页面。这些内容“对象”最终被插入到多个模版中，最终生成的将是静态页面。
 
-### Posts and Pages（文章和页面）
+#### Posts and Pages（文章和页面）
 
 Both posts and pages should be written in markdown, textile, or HTML and may also contain Liquid templating syntax.
 Both posts and pages can have meta-data assigned on a per-page basis such as title, url path, as well as arbitrary custom meta-data.
 
 【翻译】这些文章和页码都可以以markdown,textile,html编写在致辞Liquid语法的模版中，它们也可以设置meta-data，如：title,url路径，甚至是自定义的meta-data
 
-### Working With Posts（文章的创建过程）
+#### Working With Posts（文章的创建过程）
 
 **Creating a Post** （创建一篇文章）
 Posts are created by properly formatting a file and placing it the `_posts` folder.
@@ -217,6 +217,9 @@ Posts may be categorized by providing one or more categories in the YAML front m
 Categories offer more significance over tags in that they can be reflected in the URL path to the given post.
 Note categories in Jekyll work in a specific way.
 If you define more than one category you are defining a category hierarchy "set".
+
+【翻译】文章可以被归类，可以在文件头部按照YAML格式定义一个或多个分类。类别提供更多的意义在于标签，它可以通过URL反链到文章。注意类别在Jekyll在以一种特殊的方式运行。如果要定义多个分类，可以在文件头部以一下格式设置。
+
 Example:
 
     ---
@@ -227,19 +230,31 @@ Example:
 This defines the category hierarchy "lessons/beginner". Note this is _one category_ node in Jekyll.
 You won't find "lessons" and "beginner" as two separate categories unless you define them elsewhere as singular categories.
 
-### Working With Pages
+【翻译】定义类目结构“lessons/beginner”。注意是类别_节点这种结构，你不会发现"lessons" 和 "beginner"是两个不同的类别，除非你在其他地方定义了它们作为单一类别。
 
-**Creating a Page**  
+#### Working With Pages（页面的创建过程）
+
+**Creating a Page**  （创建一个页面）
+
 Pages are created by properly formatting a file and placing it anywhere in the root directory or subdirectories that do _not_ start with an underscore.
 
-**Formatting**  
+【翻译】页面是由正确格式化文件并将其放置在任何地方在根目录或子目录
+
+**Formatting**  （格式化）
+
 In order to register as a Jekyll page the file must contain [YAML Front-Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter).
 Registering a page means 1) that Jekyll will process the page and 2) that the page object will be available in the `site.pages` array for inclusion into your templates.
 
-**Categories and Tags**  
+【翻译】页面必须包含[YAML Front-Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter)。Jekyll将会访问在`site.pages`的所有模版页面。
+
+**Categories and Tags**  （分类和标签）
+
 Pages do not compute categories nor tags so defining them will have no effect.
 
-**Sub-Directories**  
+【翻译】页面不具备分类和标签功能，因此定义它们也没有意义。
+
+**Sub-Directories**  （子目录）
+
 If pages are defined in sub-directories, the path to the page will be reflected in the url.
 Example:
 
@@ -250,37 +265,50 @@ Example:
 
 This page will be available at `http://yourdomain.com/people/bob/essay.html`
 
+【翻译】如上例，如果页面被定义了目录结构，那么这个页面的url地址将会是这样的的`http://yourdomain.com/people/bob/essay.html`
 
-**Recommended Pages**  
+
+**Recommended Pages**  （默认页面）
 
 - **index.html**  
-  You will always want to define the root index.html page as this will display on your root URL.
+  You will always want to define the root index.html page as this will display on your root URL.（这个就不用说了是一个默认文件）
 - **404.html**  
-  Create a root 404.html page and GitHub Pages will serve it as your 404 response.
+  Create a root 404.html page and GitHub Pages will serve it as your 404 response.（404页面，你懂的）
 - **sitemap.html**  
-  Generating a sitemap is good practice for SEO.
+  Generating a sitemap is good practice for SEO.（站点地图，SEO专用）
 - **about.html**  
-  A nice about page is easy to do and gives the human perspective to your website.
+  A nice about page is easy to do and gives the human perspective to your website.（个人简介）
 
 
-## Templates in Jekyll
+### Templates in Jekyll（模版）
 
 Templates are used to contain a page's or post's content.
 All templates have access to a global site object variable: `site` as well as a page object variable: `page`.
 The site variable holds all accessible content and metadata relative to the site.
 The page variable holds accessible data for the given page or post being rendered at that point.
 
-**Create a Template**  
+【翻译】文章和页面都会使用到模版。模版可以访问站点的全局变量`site`以及`page`变量。站点变量保存着访问内容和metadata.
+
+**Create a Template**  （创建模版）
+
 Templates are created by properly formatting a file and placing it in the `_layouts` directory.
 
-**Formatting**  
+【翻译】编写好的模版存放在`_layouts`目录中。
+
+**Formatting**  （格式化）
+
 Templates should be coded in HTML and contain YAML Front Matter. 
 All templates can contain Liquid code to work with your site's data.
 
-**Rending Page/Post Content in a Template**  
+模版可以使用HTML和YRML进行编写。所有的模版可以通过Liquid代码调用您的站点数据。
+
+**Rending Page/Post Content in a Template**  （在模版中渲染页面/文章的内容）
+
 There is a special variable in all templates named : `content`.
 The `content` variable holds the page/post content including any sub-template content previously defined.
 Render the content variable wherever you want your main content to be injected into your template:
+
+【翻译】所有模版都可以引用`content`变量。`content`变量可以将你的内容替换到模版当中。
 
 {% capture text %}...
 <body>
@@ -292,52 +320,71 @@ Render the content variable wherever you want your main content to be injected i
 ...{% endcapture %}
 {% include JB/liquid_raw %}
 
-### Sub-Templates
+### Sub-Templates（子模版）
 
 Sub-templates are exactly templates with the only difference being they 
 define another "root" layout/template within their YAML Front Matter.
 This essentially means a template will render inside of another template.
 
-### Includes
+【翻译】其实子模版就是这个模版可以被另外一个模版包含。
+
+### Includes（包含目录）
 In Jekyll you can define include files by placing them in the `_includes` folder.
 Includes are NOT templates, rather they are just code snippets that get included into templates.
 In this way, you can treat the code inside includes as if it was native to the parent template.
 
+【翻译】你可以在`_includes`定义一些包含文件，包含文件不是模版。而只是一些代码片段，可以被模版引用。通过这种方式，你可以在模版中根据逻辑判断来引入不同的包含文件。
+
 Any valid template code may be used in includes.
 
+【翻译】任何模版都可以使用包含文件。
 
-## Using Liquid for Templating
+### Using Liquid for Templating（在模版中使用Liquid）
 
 Templating is perhaps the most confusing and frustrating part of Jekyll.
 This is mainly due to the fact that Jekyll templates must use the Liquid Templating Language.
 
-### What is Liquid?
+【翻译】模版是最重要的一部分也是最难的。因为，模版需要使用Liquid语言。
+
+#### What is Liquid?（什么是Liquid）
 
 [Liquid](https://github.com/Shopify/liquid) is a secure templating language developed by [Shopify](http://shopify.com).
 Liquid is designed for end-users to be able to execute logic within template files 
 without imposing any security risk on the hosting server.
 
+【翻译】Liquid是Shopify开发的一种安全的模版语言。Liquid被设计用来提供给终端用户在模版中实现业务逻辑的。在服务器上不存在任何风险。
+
 Jekyll uses Liquid to generate the post content within the final page layout structure and as the primary interface for working with
 your site and post/page data. 
 
-### Why Do We Have to Use Liquid?
+【翻译】Jekyll使用Liquid在模版中用来实现业务逻辑和数据调取。
+
+#### Why Do We Have to Use Liquid?（为什么我们要使用Liquid）
 
 GitHub uses Jekyll to power [GitHub Pages](http://pages.github.com/). 
 GitHub cannot afford to run arbitrary code on their servers so they lock developers down via Liquid.
 
-### Liquid is Not Programmer-Friendly.
+【翻译】GitHub使用Jekyll驱动[GitHub Pages](http://pages.github.com/). GitHub不运行除了Liquid代码以外的任何代码。
+
+#### Liquid is Not Programmer-Friendly. （Liquid是不友好的）
 
 The short story is liquid is not real code and its not intended to execute real code.
 The point being you can't do jackshit in liquid that hasn't been allowed explicitly by the implementation.
 What's more you can only access data-structures that have been explicitly passed to the template. 
 
+【翻译】这一点儿不是很理解，回头再翻译。
+
 In Jekyll's case it is not possible to alter what is passed to Liquid without hacking the gem or running custom plugins. 
 Both of which cannot be supported by GitHub Pages.
 
-As a programmer - this is very frustrating.
+【翻译】这一点儿不是很理解，回头再翻译。
+
+As a programmer - this is very frustrating.（作为一个程序员这是一个坏消息）
 
 But rather than look a gift horse in the mouth we are going to 
 suck it up and view it as an opportunity to work around limitations and adopt client-side solutions when possible.
+
+【翻译】这一点儿不是很理解，回头再翻译。
 
 **Aside**   
 My personal stance is to not invest time trying to hack liquid. It's really unnecessary
@@ -345,7 +392,7 @@ _from a programmer's_ perspective. That is to say if you have the ability to run
 you are better off sticking with ruby. Toward that end I've built [Mustache-with-Jekyll](http://github.com/plusjade/mustache-with-jekyll)
 
 
-## Static Assets
+### Static Assets
 
 Static assets are any file in the root or non-underscored subfolders that are not pages.
 That is they have no valid YAML Front Matter and are thus not treated as Jekyll Pages.
@@ -355,7 +402,7 @@ Static assets should be used for images, css, and javascript files.
 
 
 
-## How Jekyll Parses Files
+### How Jekyll Parses Files
 
 Remember Jekyll is a processing engine. There are two main types of parsing in Jekyll.
 
@@ -376,7 +423,7 @@ And thus there are two main types of file formats needed for this parsing.
 Files that _are not_ valid pages are treated as static content and pass through 
 Jekyll untouched and reside on your blog in the exact structure and format they originally existed in.
 
-### Formatting Files for Parsing.
+#### Formatting Files for Parsing.
 
 We've outlined the need for valid formatting using **YAML Front Matter**.
 Templates, posts, and pages all need to provide valid YAML Front Matter even if the Matter is empty.
@@ -398,7 +445,7 @@ The data inside the block must be valid YAML.
 Configuration parameters for YAML Front-Matter is outlined here:
 [A comprehensive explanation of YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter)
 
-#### Defining Layouts for Posts and Templates Parsing.
+##### Defining Layouts for Posts and Templates Parsing.
 
 The `layout` parameter in the YAML Front Matter defines the template file for which the given post or template should be injected into.
 If a template file specifies its own layout, it is effectively being used as a `sub-template.`
@@ -408,7 +455,7 @@ That is to say loading a post file into a template file that refers to another t
 
 
 
-## How Jekyll Generates the Final Static Files.
+### How Jekyll Generates the Final Static Files.
 
 Ultimately, Jekyll's job is to generate a static representation of your website. 
 The following is an outline of how that's done:
@@ -444,7 +491,7 @@ Remember, in Jekyll you are an end-user. Your API has only two components:
 All the data objects available to you in the templates via Liquid are outlined in the **API Section** of Jekyll-Bootstrap.
 You can also read the original documentation here: <https://github.com/mojombo/jekyll/wiki/Template-Data>
 
-## Conclusion
+### Conclusion
 
 I hope this paints a clearer picture of what Jekyll is doing and why it works the way it does.
 As noted, our main programming constraint is the fact that our API is limited to what is accessible via Liquid and Liquid only.
@@ -453,7 +500,7 @@ Jekyll-bootstrap is intended to provide helper methods and strategies aimed at m
 
 **Thank you** for reading this far.
 
-## Next Steps
+### Next Steps
 
 Please take a look at [{{ site.categories.api.first.title }}]({{ BASE_PATH }}{{ site.categories.api.first.url }}) 
 or jump right into [Usage]({{ BASE_PATH }}{{ site.categories.usage.first.url }}) if you'd like.
