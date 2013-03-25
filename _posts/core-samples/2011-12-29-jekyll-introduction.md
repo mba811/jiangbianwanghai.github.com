@@ -386,50 +386,73 @@ suck it up and view it as an opportunity to work around limitations and adopt cl
 
 【翻译】这一点儿不是很理解，回头再翻译。
 
-**Aside**   
+**Aside** （题外话）  
 My personal stance is to not invest time trying to hack liquid. It's really unnecessary
 _from a programmer's_ perspective. That is to say if you have the ability to run custom plugins (i.e. run arbitrary ruby code)
 you are better off sticking with ruby. Toward that end I've built [Mustache-with-Jekyll](http://github.com/plusjade/mustache-with-jekyll)
 
+【翻译】个人认为没有必要花时间去研究hack liquid。如果你有能力开发插件的话。你最好使用ruby，我们已经做了这些工作[Mustache-with-Jekyll](http://github.com/plusjade/mustache-with-jekyll)
 
-### Static Assets
+
+### Static Assets（静态资源）
 
 Static assets are any file in the root or non-underscored subfolders that are not pages.
 That is they have no valid YAML Front Matter and are thus not treated as Jekyll Pages.
 
 Static assets should be used for images, css, and javascript files. 
 
+【翻译】静态资源可以放在根目录的任何地方。他们没有YAML头格式是不被Jekyll解析的页面。静态资源可以是images,css,javascript文件。
 
 
-
-### How Jekyll Parses Files
+### How Jekyll Parses Files（Jekyll是怎么解析文件的）
 
 Remember Jekyll is a processing engine. There are two main types of parsing in Jekyll.
 
-- **Content parsing.**   
-  This is done with textile or markdown.
-- **Template parsing.**   
-  This is done with the liquid templating language.
+【翻译】谨记Jekyll是一个处理引擎。Jekyll可以解析两种类型。
+
+- **Content parsing.**   （内容解析）
+
+  This is done with textile or markdown.（可以是textile和markdown文件）
+- **Template parsing.**   （模版解析）
+
+
+  This is done with the liquid templating language.（可以是含有liquid语法的模版文件）
 
 And thus there are two main types of file formats needed for this parsing.
 
-- **Post and Page files.**  
+【上诉两种类型的文件都将被解析，老外有时候说话就是这么啰嗦。呵呵】
+
+- **Post and Page files.**  （文章和页面）
+
   All content in Jekyll is either a post or a page so valid posts and pages are parsed with markdown or textile.
-- **Template files.**    
+
+  【翻译】Jekyll将会支持格式为文章和页面的markdown、textile的内容解析出来。
+
+- **Template files.**    （模版文件）
+
   These files go in `_layouts` folder and contain your blogs **templates**. They should be made in HTML with the help of Liquid syntax.
   Since include files are simply injected into templates they are essentially parsed as if they were native to the template.
 
-**Arbitrary files and folders.**   
+  【翻译】`_layouts`存放着博客的模版，这些模版会将解析成html.包含文件一旦被载入到模版中后其实就是模版文件，一样会被解析的。
+
+**Arbitrary files and folders.**  （其他文件和目录）
+
 Files that _are not_ valid pages are treated as static content and pass through 
 Jekyll untouched and reside on your blog in the exact structure and format they originally existed in.
 
-#### Formatting Files for Parsing.
+【翻译】放心吧，Jekyll不会解析他不支持的文件。
+
+#### Formatting Files for Parsing.（格式化文件解析）
 
 We've outlined the need for valid formatting using **YAML Front Matter**.
 Templates, posts, and pages all need to provide valid YAML Front Matter even if the Matter is empty.
 This is the only way Jekyll knows you want the file processed.
 
+【翻译】我们列出来了需要声明文件的头。模版，文章和页面都需要提供AML Front Matter。即便是为空的。
+
 YAML Front Matter must be prepended to the top of template/post/page files:
+
+【翻译】YAML Front Matter必须添加到模版、文章、页面的最顶端。
 
     ---
     layout: post
@@ -442,16 +465,20 @@ YAML Front Matter must be prepended to the top of template/post/page files:
 Three hyphens on a new line start the Front-Matter block and three hyphens on a new line end the block.
 The data inside the block must be valid YAML.
 
+【翻译】上下都必须有三个连字符将YAML隔开。里面按照YAML格式进行编写。如上所示。
+
 Configuration parameters for YAML Front-Matter is outlined here:
 [A comprehensive explanation of YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter)
 
-##### Defining Layouts for Posts and Templates Parsing.
+【翻译】这里有跟详细的配置参数：[A comprehensive explanation of YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter)
+
+##### Defining Layouts for Posts and Templates Parsing.（设定布局）
 
 The `layout` parameter in the YAML Front Matter defines the template file for which the given post or template should be injected into.
 If a template file specifies its own layout, it is effectively being used as a `sub-template.`
 That is to say loading a post file into a template file that refers to another template file with work in the way you'd expect; as a nested sub-template.
 
-
+【翻译】布局参数也需要提前在模版页面顶部声明。如果一个模板文件指定它自己的布局,它实际上是被用作“子模板。也就是说加载一篇文件成一个模板文件,指的是另一个模板文件,以这种方式工作或者作为一个嵌套的子模板。
 
 
 
