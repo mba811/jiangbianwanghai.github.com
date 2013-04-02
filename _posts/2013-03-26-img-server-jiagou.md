@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "海量图片存储与处理架构分析"
-description: ""
-category: 
+description: "随着业务的不断发展，应对海量图片的爆发式增长成了每一个WEB网站必须要解决的问题"
+category: jiagou
 tags: [网站架构, nginx, nfs]
 ---
 {% include JB/setup %}

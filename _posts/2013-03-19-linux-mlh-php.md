@@ -2,7 +2,7 @@
 layout: post
 title: "Linux命令行下操作php的经验总结"
 description: "Linux命令行下操作php的经验总结"
-category: 
+category: linux
 tagline: "转载本站文章请注明作者和出处"
 tags: [linux, php, 导数据]
 ---
