@@ -1,4 +1,4 @@
-body{font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif,"宋体"; background:url('bg.jpg'); padding:80px 0;}
+body{font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif,"宋体"; background:url('../img/background.png'); padding:80px 0;}
 footer{padding-top:10px; text-align:right; font-size:12px; color:#999}
 .art-content p,.art-content h3,.art-content h4{text-indent:28px;}
 .span2{text-align:right; font-size:12px; color:#999}
@@ -6,7 +6,9 @@ footer{padding-top:10px; text-align:right; font-size:12px; color:#999}
 /* Custom container */
 .container-narrow{margin:0 auto;max-width:960px;}
 .container-narrow > hr{margin: 30px 0;}
-.container-narrow .content{border:solid 1px #EEE;background:#FFF;padding:20px 40px 20px 40px;border-radius:4px;border:1px solid #ddd
+.content-wrap{background: none repeat scroll 0 0 rgba(0, 0, 0, 0.04);padding: 8px;border-radius:4px;}
+.content-inner{border:solid 1px #D3D3D3;padding: 6px; background:#F8F8F8;border-radius:4px}
+.container-narrow .content{background:#FFF;padding:15px 30px 15px 30px;border-radius:4px
 }
 .page-header{margin-bottom:10px;}
 .navbar{border-radius:0px;}
