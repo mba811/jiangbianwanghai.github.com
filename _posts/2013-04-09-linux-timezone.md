@@ -3,7 +3,7 @@ layout: post
 title: "时区解析及如何调整Linux下的时区"
 description: "科普一下关于时区的知识及如何调整LinuxI下的时区"
 category: linux
-tags: [linux,时区]
+tags: [linux, 时区]
 ---
 {% include JB/setup %}
 
