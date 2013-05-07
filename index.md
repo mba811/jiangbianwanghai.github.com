@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 江边望海的博客!
-tagline: 关注我：weibo.com/jiangbianwanghai
+tagline: 久在江边站，必有望海心
 ---
 {% include JB/setup %}
 
