@@ -32,6 +32,11 @@
     <!-- atom & rss feed -->
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+    <style type="text/css">
+	.content {
+		width:auto; float:none;
+	}
+	</style>
   </head>
   <body>
     <div class="navbar navbar-fixed-top">
@@ -49,12 +54,9 @@
     <div class="container-narrow">
       <div class="content-wrap">
         <div class="content-inner">
-		  <div style="background:#FFFFFF;height:auto;overflow:auto;">
           <div class="content">
             {{ content }}
           </div>
-		  <div class="weibo"><iframe width="240" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=240&height=550&fansRow=1&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2617119124&verifier=481240df&dpc=1"></iframe></div>
-		  </div>
         </div>
       </div>
       <footer>
