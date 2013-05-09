@@ -7,8 +7,6 @@ tags: [Tokyo Tyrant, Tokyo Cabinet, TTserver, nosql]
 ---
 {% include JB/setup %}
 
-<p class="text-center"><img src="http://farm9.staticflickr.com/8103/8629678161_0a308b5970.jpg" width="273" height="354" alt="1"><br />图片测试</p>
-
 ####Tokyo Cabinet & Tokyo Tyrant 介绍
 [Tokyo Cabinet](http://fallabs.com/tokyocabinet/)是日本人**平林幹雄**开发的一款 DBM 数据库，该数据库读写非常快，哈希模式写入100万条数据只需0.643秒，读取100万条数据只需0.773秒，是 Berkeley DB 等 DBM 的几倍。
 
