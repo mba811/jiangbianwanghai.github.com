@@ -27,7 +27,7 @@ df 是来自于coreutils 软件包，系统安装时，就自带的；我们通�
 
 功能说明：切割文件
 
-格式: split [-n] file [name] 
+格式: split \[-n\] file \[name\] 
 
 参数说明： 
 
