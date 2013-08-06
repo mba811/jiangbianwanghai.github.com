@@ -27,26 +27,28 @@ Tokyo Tyrant 加上 Tokyo Cabinet，构成了一款支持高并发的分布式�
 **安装 Tokyo Cabinet**
 
 我习惯将下载的文件放入/usr/local/src中。安装后的程序放在/usr/local/中。我的操作系统是centos6.0 64bits
-
-    cd /usr/local/src/
-    wget http://fallabs.com/tokyocabinet/tokyocabinet-1.4.48.tar.gz
-    tar zxvf tokyocabinet-1.4.48.tar.gz
-    cd tokyocabinet-1.4.48
-    ./configure --prefix=/usr/local/tokyocabinet
-    make
-    makt install
-    cd ../
+<pre class="brush: bash;">
+cd /usr/local/src/
+wget http://fallabs.com/tokyocabinet/tokyocabinet-1.4.48.tar.gz
+tar zxvf tokyocabinet-1.4.48.tar.gz
+cd tokyocabinet-1.4.48
+./configure --prefix=/usr/local/tokyocabinet
+make
+makt install
+cd ../
+</pre>
 
 这个过程应该是比较顺利的
 
 **安装 Tokyo Tyrant**
-
-    wget http://fallabs.com/tokyotyrant/tokyotyrant-1.1.41.tar.gz
-    tar zxvf tokyotyrant-1.1.41.tar.gz
-    cd tokyotyrant-1.1.41
-    ./configure --prefix=/usr/local/tokyotyrant --with-tc=/usr/local/tokyocabinet/
-    make
-    make install
-    cd ../
+<pre class="brush: bash;">
+wget http://fallabs.com/tokyotyrant/tokyotyrant-1.1.41.tar.gz
+tar zxvf tokyotyrant-1.1.41.tar.gz
+cd tokyotyrant-1.1.41
+./configure --prefix=/usr/local/tokyotyrant --with-tc=/usr/local/tokyocabinet/
+make
+make install
+cd ../
+</pre>
 
 **--with-tc=/usr/local/tokyocabinet/**这个必须带上，这是因为Tokyo Tyrant是Tokyo Cabinet网络接口.如果不添加就会出现“configure: error: tcutil.h is required”

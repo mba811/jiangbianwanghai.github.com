@@ -93,4 +93,34 @@ PS:这时就会在java目录下看到解压后的jdk目录了，网上的教程�
 
 如果能够打印出来“Hello World!”说明jdk彻底安装成功了。可以放心使用啦。
 
+**2、安装tomcat**
+
+在选择tomcat版本的时候，需要选择`Binary Distributions`下的`Core`下的tar包。
+
+    wget http://mirror.bjtu.edu.cn/apache/tomcat/tomcat-7/v7.0.42/bin/apache-tomcat-7.0.42.tar.gz
+
+将压缩包复制到/usr/local并解压
+
+    cp apache-tomcat-7.0.42.tar.gz /usr/local
+    cd /usr/local
+    tar -zxvf apache-tomcat-7.0.42.tar.gz
+
+启动Tomcat
+
+/usr/local/apache-tomcat-7.0.42/bin/startup.sh
+
+关闭Tomcat
+
+/usr/local/apache-tomcat-7.0.42/bin/shutdown.sh
+
+**3、lucene安装**
+
+lucene其实就是一个java的开发包，所以下载解压
+
+    wget http://apache.etoak.com/lucene/java/3.6.2/lucene-3.6.2.tgz
+    tar -zxvf lucene-3.6.2.tgz
+    cd lucene-3.6.2
+    cp lucene-core-3.6.2.jar /usr/local/java/jdk1.7.0_25/lib/
+    cp contrib/demo/lucene-demo-3.6.2.jar /usr/local/java/jdk1.7.0_25/lib/
+
 --未完待续
