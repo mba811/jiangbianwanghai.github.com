@@ -4,7 +4,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-45871766-1', 'jiangbianwanghai.com');
+  ga('create', 'UA-45866478-1', 'jiangbianwanghai.com');
   ga('send', 'pageview');
 
 </script>
